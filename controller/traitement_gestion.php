@@ -11,7 +11,7 @@ foreach (affichageGestion($bdd) as $row): ?>
           <td><?php echo $row['mot']; ?></td>
           <td><?php echo $row['definition']; ?></td>
           <td>
-            <a href="modifier.php?id=<?php echo $row['id']; ?>" class="modif">Modifier</a>
+            <a href="vue/vue_modifier.php?id=<?php echo $row['id']; ?>" class="modif">Modifier</a>
           </td>
           <td>
             <a href="supprimer.php?id=<?php echo $row['id']; ?>" class="suppr">Supprimer</a>

@@ -62,7 +62,7 @@ if (isset($_POST['id'], $_POST['mot'], $_POST['definition'], $_POST['categorie']
     $req->execute();
 
     // Redirection de l'utilisateur vers une autre page
-    header("Location: gestion.php");
+    header("Location: ../index.php?page=3");
     exit();
 } else {
 
@@ -87,7 +87,7 @@ if (isset($_POST['id'], $_POST['mot'], $_POST['definition'], $_POST['categorie']
         // Affichage du formulaire pré-rempli avec les données actuelles
         ?>
 
-        <form action="modifier.php" method="post">
+        <form action="vue_modifier.php" method="post">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
             <label for="mot">Mot :</label>
             <input type="text" name="mot" value="<?php echo $mot; ?>"><br>
@@ -110,14 +110,17 @@ if (isset($_POST['id'], $_POST['mot'], $_POST['definition'], $_POST['categorie']
 <?php
     } else {
         // La ligne à modifier n'existe pas, redirigez l'utilisateur vers une autre page
-        header("Location: gestion.php");
+        header("Location: ../index.php?page=3");
         exit();
     }
 } else {
     // L'identifiant n'a pas été spécifié, redirigez l'utilisateur vers une autre page
-    header("Location: gestion.php");
+    header("Location: ../index.php?page=3");
     exit();
     }
 }
 ?>
 
+<!-- <?php 
+  include('controller/traitement_update.php')
+?> -->
